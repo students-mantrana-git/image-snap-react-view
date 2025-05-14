@@ -10,6 +10,7 @@ import PredictorDetail from "./pages/PredictorDetail";
 import Profile from "./pages/Profile";
 import Subscriptions from "./pages/Subscriptions";
 import Orders from "./pages/Orders";
+import Blogs from "./pages/Blogs";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
           <Route element={<Layout />}>
             <Route path="/" element={<Index />} />
             <Route path="/predictors/:id" element={<PredictorDetail />} />
+            <Route path="/blogs" element={<Blogs />} />
           </Route>
           <Route path="/profile" element={<Profile />} />
           <Route path="/subscriptions" element={<Subscriptions />} />
