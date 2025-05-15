@@ -2,7 +2,9 @@
 import { Link } from 'react-router-dom';
 import ExamCard from '@/components/ExamCard';
 import NewsletterSubscription from '@/components/NewsletterSubscription';
-import { ClipboardList, FileText, BarChart3 } from 'lucide-react';
+import { FileText, BarChart3, BookOpen, CheckCircle, ArrowRight } from 'lucide-react';
+import { Button } from "@/components/ui/button";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const Index = () => {
   const engineeringExams = [
@@ -38,32 +40,110 @@ const Index = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-purple-50 to-purple-100 py-16">
-        <div className="container mx-auto px-5">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="md:w-1/2 mb-8 md:mb-0">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-                Career Mantrana's<br />
-                <span className="text-mantrana-purple">2025 College Predictor</span>
+      <section className="relative overflow-hidden py-20 md:py-24 lg:py-28">
+        {/* Background gradient & decorations */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#BB53CC] to-[#8E24AA] opacity-10"></div>
+        <div className="absolute -top-16 -left-16 w-64 h-64 bg-[#BB53CC] rounded-full opacity-10 blur-3xl"></div>
+        <div className="absolute top-1/2 right-0 w-80 h-80 bg-[#8E24AA] rounded-full opacity-10 blur-3xl"></div>
+        
+        <div className="container mx-auto px-5 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+            {/* Left Content */}
+            <div className="w-full lg:w-1/2 space-y-6">
+              <div className="inline-block bg-white/10 backdrop-blur-sm border border-purple-200 rounded-full px-4 py-1 text-sm font-medium text-mantrana-purple animate-fade-in">
+                #1 College Predictor for Class 12th Students
+              </div>
+              
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                Your <span className="text-mantrana-purple">Perfect College</span> Match Awaits
               </h1>
-              <p className="text-gray-700 mb-6 max-w-lg">
-                Find out your college admission chances based on your rank, exam performance, and historical trends. Explore the best-fit colleges and make informed decisions for your future.
+              
+              <p className="text-gray-700 text-lg max-w-lg">
+                Make informed decisions about your future with data-driven college predictions based on your rank and preferences.
               </p>
-              <Link to="/predictors">
-                <button className="bg-mantrana-purple hover:bg-mantrana-light-purple text-white px-6 py-3 rounded-md transition-colors">
-                  Explore Predictors
-                </button>
-              </Link>
+              
+              <div className="flex flex-wrap items-center gap-3 pt-2">
+                <div className="flex items-center">
+                  <span className="text-yellow-500">★★★★★</span>
+                  <span className="ml-1 font-medium">4.8/5</span>
+                </div>
+                <span className="text-gray-500">|</span>
+                <span className="text-gray-700">Trusted by 50,000+ students</span>
+              </div>
+              
+              <div className="flex flex-wrap gap-4 pt-2">
+                <Link to="/predictors/jee-main-2025">
+                  <Button className="bg-gradient-to-r from-[#BB53CC] to-[#8E24AA] hover:opacity-90 text-white rounded-full px-8 py-6 h-auto text-base">
+                    Try College Predictor <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+                <Link to="/webinar">
+                  <Button variant="outline" className="rounded-full px-8 py-6 h-auto text-base border-2 border-mantrana-purple text-mantrana-purple hover:bg-mantrana-purple/5">
+                    Watch Demo
+                  </Button>
+                </Link>
+              </div>
             </div>
-            <div className="md:w-1/2 flex justify-center">
-              <div className="relative">
-                <div className="w-60 h-60 bg-yellow-300 rounded-full absolute -right-5 -top-5 z-0"></div>
-                <div className="relative z-10">
-                  <img 
-                    src="https://cdn-icons-png.flaticon.com/512/3976/3976626.png"
-                    alt="College Predictor" 
-                    className="w-52 h-52 object-contain"
-                  />
+            
+            {/* Right Content - Feature Card */}
+            <div className="w-full lg:w-1/2 mt-12 lg:mt-0">
+              <div className="bg-white rounded-2xl shadow-lg p-6 border border-purple-100 hover:shadow-xl transition-all animate-fade-in">
+                <div className="bg-mantrana-purple/5 rounded-xl p-4 mb-5">
+                  <h3 className="text-xl font-bold text-mantrana-purple mb-1">AI-Powered College Predictor</h3>
+                  <p className="text-gray-600">Instant delivery to your email</p>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50">
+                    <div className="bg-purple-100 p-2 rounded-md text-mantrana-purple mt-1">
+                      <CheckCircle size={20} />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold">Personalized Recommendations</h4>
+                      <p className="text-sm text-gray-600">Tailored college suggestions based on your rank</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50">
+                    <div className="bg-purple-100 p-2 rounded-md text-mantrana-purple mt-1">
+                      <BarChart3 size={20} />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold">Branch-specific Insights</h4>
+                      <p className="text-sm text-gray-600">Placement stats & future prospects</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50">
+                    <div className="bg-purple-100 p-2 rounded-md text-mantrana-purple mt-1">
+                      <BookOpen size={20} />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold">Counselling Strategy</h4>
+                      <p className="text-sm text-gray-600">Round-by-round admission guidance</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50">
+                    <div className="bg-purple-100 p-2 rounded-md text-mantrana-purple mt-1">
+                      <FileText size={20} />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold">PDF Format Report</h4>
+                      <p className="text-sm text-gray-600">Instant delivery to your email</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="mt-6 bg-yellow-50 rounded-lg p-4 flex items-center justify-between">
+                  <div>
+                    <p className="text-gray-700 font-medium">Limited Time Offer</p>
+                    <p className="text-sm text-gray-500">Get your personalized report today</p>
+                  </div>
+                  <div className="bg-yellow-400 rounded-full w-16 h-16 flex flex-col items-center justify-center text-center">
+                    <span className="text-xs font-medium">Only</span>
+                    <span className="font-bold">₹499</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -121,7 +201,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="flex flex-col items-center text-center">
               <div className="bg-mantrana-yellow w-16 h-16 rounded-lg flex items-center justify-center mb-4">
-                <ClipboardList size={32} className="text-mantrana-purple" />
+                <FileText size={32} className="text-mantrana-purple" />
               </div>
               <h4 className="font-semibold mb-2">Step 1</h4>
               <p className="text-gray-600">Choose your exam</p>
