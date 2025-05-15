@@ -1,7 +1,7 @@
-
 import { Link } from 'react-router-dom';
 import ExamCard from '@/components/ExamCard';
 import NewsletterSubscription from '@/components/NewsletterSubscription';
+import AIChoiceFillingCard from '@/components/AIChoiceFillingCard';
 import { FileText, BarChart3, BookOpen, CheckCircle, ArrowRight } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -87,65 +87,7 @@ const Index = () => {
             
             {/* Right Content - Feature Card */}
             <div className="w-full lg:w-1/2 mt-12 lg:mt-0">
-              <div className="bg-white rounded-2xl shadow-lg p-6 border border-purple-100 hover:shadow-xl transition-all animate-fade-in">
-                <div className="bg-mantrana-purple/5 rounded-xl p-4 mb-5">
-                  <h3 className="text-xl font-bold text-mantrana-purple mb-1">AI-Powered College Predictor</h3>
-                  <p className="text-gray-600">Instant delivery to your email</p>
-                </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50">
-                    <div className="bg-purple-100 p-2 rounded-md text-mantrana-purple mt-1">
-                      <CheckCircle size={20} />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold">Personalized Recommendations</h4>
-                      <p className="text-sm text-gray-600">Tailored college suggestions based on your rank</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50">
-                    <div className="bg-purple-100 p-2 rounded-md text-mantrana-purple mt-1">
-                      <BarChart3 size={20} />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold">Branch-specific Insights</h4>
-                      <p className="text-sm text-gray-600">Placement stats & future prospects</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50">
-                    <div className="bg-purple-100 p-2 rounded-md text-mantrana-purple mt-1">
-                      <BookOpen size={20} />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold">Counselling Strategy</h4>
-                      <p className="text-sm text-gray-600">Round-by-round admission guidance</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50">
-                    <div className="bg-purple-100 p-2 rounded-md text-mantrana-purple mt-1">
-                      <FileText size={20} />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold">PDF Format Report</h4>
-                      <p className="text-sm text-gray-600">Instant delivery to your email</p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="mt-6 bg-yellow-50 rounded-lg p-4 flex items-center justify-between">
-                  <div>
-                    <p className="text-gray-700 font-medium">Limited Time Offer</p>
-                    <p className="text-sm text-gray-500">Get your personalized report today</p>
-                  </div>
-                  <div className="bg-yellow-400 rounded-full w-16 h-16 flex flex-col items-center justify-center text-center">
-                    <span className="text-xs font-medium">Only</span>
-                    <span className="font-bold">₹499</span>
-                  </div>
-                </div>
-              </div>
+              <AIChoiceFillingCard />
             </div>
           </div>
         </div>
