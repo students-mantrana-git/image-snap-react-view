@@ -12,6 +12,7 @@ import Profile from "./pages/Profile";
 import Subscriptions from "./pages/Subscriptions";
 import Orders from "./pages/Orders";
 import Blogs from "./pages/Blogs";
+import AboutUs from "./pages/AboutUs";
 import NotFound from "./pages/NotFound";
 
 // Create a client
@@ -29,6 +30,7 @@ function App() {
               <Route path="/" element={<Index />} />
               <Route path="/predictors/:id" element={<PredictorDetail />} />
               <Route path="/blogs" element={<Blogs />} />
+              <Route path="/about-us" element={<AboutUs />} />
             </Route>
             <Route path="/profile" element={<Profile />} />
             <Route path="/subscriptions" element={<Subscriptions />} />
